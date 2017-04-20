@@ -3,16 +3,9 @@
 <div class="container-fluid">
   <h1>Products</h1>
   <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm-2 col-md-4">
-        <%= image_tag(product.image_url, class: "img-responsive") %>
-       <h2><%= product.name %></h2>
-        <h3><%= product.description %></h3>
-        <h4>Colour:<%= product.colour %></h4>
-        <h5>Price:<%= product.price %></h5>
-        
-      </div><!-- /col -->
-    <% end %>
+     <% @products.each do |product| %>
+    <%= render @products %>
+  <% end %>
   </div>
 </div>
 <br>
