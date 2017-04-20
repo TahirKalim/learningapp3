@@ -1,13 +1,16 @@
 
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm-2 col-md-4">
-        <%= image_tag(product.image_url, class: "img-responsive") %>
-       <h2><%= link_to product.name %></h2>
-        <h3><%= product.description %></h3>
-        <h4>Colour:<%= product.colour %></h4>
-        <h5>Price:<%= product.price %></h5>
-        
-      </div><!-- /col -->
-    <% end %>
-  </div>
+  
+ <% cache product do %>
+ <div class="col-xs-12 col-md-3 block " style="height:400px;"> 
+  
+    <div class="thumbnail">
+    <h3><%= product.name %></h3>
+    
+    <%= image_tag(product.image_url, class: "img-responsive thumbnail-img") %> 
+    <p class="description"><%= product.description %></p>
+    <p><strong><%= number_to_currency(product.price) %></strong></p>
+    <p><%= link_to 'See more!', product, class:'btn btn-success new-product-btn' %> </p>
+    </div>
+ 
+</div>
+<% end %>
