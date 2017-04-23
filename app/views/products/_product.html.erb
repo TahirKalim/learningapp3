@@ -1,9 +1,9 @@
 
   
- <% cache product do %>
+ 
  <div class="col-xs-12 col-md-3 block " style="height:400px;"> 
   
-    <div class="thumbnail">
+    <div>
     <h3><%= product.name %></h3>
     
     <%= image_tag(product.image_url, class: "img-responsive thumbnail-img") %> 
@@ -13,4 +13,3 @@
     </div>
  
 </div>
-<% end %>

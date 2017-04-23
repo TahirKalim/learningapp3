@@ -4,7 +4,8 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  margin-top: 40px;
+
 }
 
 p, ol, ul, td {
@@ -86,4 +87,7 @@ div {
 
 label {
   display: block;
+}
+.col-xs-12 col-md-3 block{
+  margin-bottom:65px;
 }

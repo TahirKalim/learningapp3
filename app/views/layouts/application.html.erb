@@ -3,7 +3,7 @@
   <head>
     <title>Learningapp3</title>
     <%= csrf_meta_tags %>
-
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -46,13 +46,9 @@
   
 <%= yield %>
 
+<%= render 'static_pages/footer' %>
 
 
-<footer class="footer">
-  <div class="container">
-        &copy; 2017 Bike Frankfurt <p class="text-muted">Place sticky footer content here.</p>
-  </div>
-</footer>
 
   </body>
 </html>

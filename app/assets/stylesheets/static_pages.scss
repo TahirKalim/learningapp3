@@ -1,21 +1,38 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1{
-	font-size:4em;
-	font-color:blue;
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
 }
-p{
-	color:red;
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
-h3{
-	color:green;
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }
 
-//footer
-.footer{
-	background-color:grey;
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
 }
-.footer p{
-	float: right;
+.container .text-muted {
+  margin: 20px 0;
 }
+
