@@ -5,4 +5,11 @@ class StaticPagesController < ApplicationController
   @products = Product.limit(3)
 end
 
+def contact_submission
+    @name = params[:name]
+    @email = params[:email]
+    @message = params[:message]
+    UserMailer.contact_form(@email, @name, @message).deliver_now
+  end
+  
 end
