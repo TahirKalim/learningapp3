@@ -1,11 +1,10 @@
-
+<!-- This partial displays the panels on the product page -->
   
  
  <div class="col-xs-12 col-md-3 block " style="height:400px;"> 
   
     <div>
     <h3><%= product.name %></h3>
-    
     <%= image_tag(product.image_url, class: "img-responsive thumbnail-img") %> 
     <p class="description"><%= product.description %></p>
     <p><strong><%= number_to_currency(product.price) %></strong></p>
