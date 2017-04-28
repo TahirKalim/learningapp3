@@ -61,3 +61,5 @@ gem 'simple_form', '~> 3.4'
 gem 'devise'
 
 gem 'binding_of_caller'
+
+gem 'cancancan', '~> 1.10'
