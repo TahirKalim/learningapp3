@@ -32,6 +32,8 @@
           <li><%= link_to("Products", products_path) %></li>
           <li><%= link_to("Contact", static_pages_contact_path) %></li>
           <li><%= link_to("About", static_pages_about_path) %></li>
+          <li> <%= link_to("Users", users_path)%></li>
+
           <li><!-- Search Form -->
             <%= form_tag("/products", method: "get", class: "form-inline navbar-form", role: "search") do %>
               <div class="form-group">
