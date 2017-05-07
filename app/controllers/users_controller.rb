@@ -13,9 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if current_user != @user
-      redirect_to roor_url, alert: "Sorry, this isn't your profile."
-    end
+    @users = User.find(params[:id])
   end
 
   # GET /users/new
