@@ -1,23 +1,24 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!,except: %i(show index)
+  before_action :authenticate_user!, :except => [:index, :show]
 
   # GET /products
   # GET /products.json
- def index
-  if params[:q]
-    search_term = params[:q]
-    @products = Product.search(search_term)
-  else
-    @products = Product.all
+  def index
+    if params[:q]
+      search_term = params[:q]
+      @products = Product.search(search_term)
+    else
+      @products = Product.all
+    end
   end
-  end
+
   # GET /products/1
   # GET /products/1.json
-     def show
-    @product = Product.find(params[:id])
-     @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], per_page: 2)
+  def show
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], per_page: 2)
   end
+
   # GET /products/new
   def new
     @product = Product.new
@@ -77,4 +78,4 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :colour, :price)
     end
-end 
+end

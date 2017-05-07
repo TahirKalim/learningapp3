@@ -2,6 +2,7 @@
 
 <div class="container-fluid">
   <h1>Products</h1>
+  <h2>We present to you the best bikes from the world!</h2>
   <div class="row">
      <% @products.each do |product| %>
     <%= render product %>
@@ -9,8 +10,10 @@
   </div>
 </div>
 <br>
+<% if signed_in? && current_user.admin? %>
   <div class="new-product-button">
     <%= link_to 'New Product', new_product_path %>
   </div>
+  <% end %>
 </div>
-<!--%= link_to 'New Product', new_product_path %-->
+
