@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => { :registrations => "user_registrations" }
-  
+   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => { :registrations => "user_registrations" }, :skip => [:registrations]  
+                                            
+as :user do
+  get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
+  put 'users' => 'devise/registrations#update', :as => 'user_registration'            
+end
   resources :users
   resources :products do
   resources :comments
