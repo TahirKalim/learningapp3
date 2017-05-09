@@ -38,6 +38,8 @@ group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  #rspec-rails
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
