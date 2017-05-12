@@ -1,0 +1,59 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ratings-row {
+	margin: 10px 0;
+	background-color: white;
+	box-shadow: 5px 4px 9px 0px rgba(0, 0, 0, 0.20), 0 6px 20px 0px rgba(0, 0, 0, 0.70);
+}
+
+.ratings-row p {
+	padding: 5px 10px;
+}
+
+.ratings-row a {
+	float: right;
+	padding: 15px;
+}
+
+.rating-card {
+	padding-left: 10px;
+}
+
+.paginate-box {
+	margin: 0 auto;
+}
+
+.pagination {
+	font-size: 1.2em;
+}
+
+.pagination a,
+.pagination .previous_page,
+.pagination .next_page,
+.pagination .current {
+	padding: 4px 6px;
+	background-color: white;
+	border: 0.5px solid darkgrey;
+	box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.20), 0 2px 5px 0px rgba(0, 0, 0, 0.70);
+}
+
+.pagination .current,
+.pagination .disabled {
+	font-style: normal;
+	color: dimgrey;
+}
+
+.pagination a:hover {
+	text-decoration: none;
+}
+
+.comment-title {
+	display: inline-block;
+}
+
+.glyphicon-remove {
+	color: red;
+}
+

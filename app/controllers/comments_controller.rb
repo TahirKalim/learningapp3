@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
-before_action :authenticate_user!
+  before_action :authenticate_user!
   authorize_resource
-  def create
+  
+	def create
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user
@@ -16,7 +17,7 @@ before_action :authenticate_user!
     end
   end
 
-    def destroy
+  def destroy
     @comment = Comment.find(params[:id])
     product = @comment.product
     @comment.destroy
@@ -25,8 +26,8 @@ before_action :authenticate_user!
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:user_id, :body, :rating)
-  end
+		def comment_params
+		  params.require(:comment).permit(:user_id, :body, :rating)
+		end
 
 end

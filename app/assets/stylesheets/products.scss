@@ -2,3 +2,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.product-card {
+	padding: 10px;
+	margin-top: 20px;
+	border-radius: 10px;
+	background-color: #F1F1F1;
+	box-shadow: 5px 4px 9px 0px rgba(0, 0, 0, 0.20), 0 6px 20px 0px rgba(0, 0, 0, 0.70);
+}
+
+.product-title {
+	text-align: center;
+}
+
+.product-title a { 
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	color: #6d1e01;
+}
+
+.product-title:hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+.show-prod {
+	margin: 0 auto;
+}
+
+.thumbnail {
+	padding: 0;
+	margin: 19px;
+	background-color: #F1F1F1;
+	border-width: 2px;
+}
+
+
+/**** buttons ****/
+
+.card-button {
+	background-color: #a07741;
+	color: #e5dbda !important;
+}
+
+.card-button:hover {
+	background-color: #9b5c1a;
+}
+
+.product-button {
+	background-color: #8e0712;
+	margin-top: 20px;
+}
+
+.product-button a {
+	color: #efd6b6 !important;
+}
+
+.product-button a:hover {
+	background-color: #ad3620;
+	color: #efd6b6 !important;
+}
+
+
+
+

@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
-before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
   authorize_resource
   respond_to :json, :html
   before_filter :authenticate_user!,except: %i(show index)
+
   # GET /products
   # GET /products.json
   def index
@@ -10,15 +11,14 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
       search_term = params[:q]
       @products = Product.search(search_term)
     else
-      @products = Product.all.paginate(:page => params[:page], :per_page => 3)
+      @products = Product.all
     end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @products = Product.find(params[:id])
-  @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /products/new
@@ -65,7 +65,7 @@ before_action :set_product, only: [:show, :edit, :update, :destroy]
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to @product, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

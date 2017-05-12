@@ -1,25 +1,16 @@
-<!--p id="notice"><%= notice %></p-->
 
-<div class="container-fluid">
-  <h1>Products</h1>
-  <h2>We present to you the best bikes from the world!</h2>
+<h1>Products</h1>
+
+
+<div class="container">
   <div class="row">
-     <% @products.each do |product| %>
-    <%= render product %>
-  <% end %>
+    <%= render @products %>
   </div>
+
+  <br>
+  	<% if signed_in? && current_user.admin? %>
+    	<%= link_to 'New Product', new_product_path, class: "btn btn-danger product-button" %>
+    <% end %>
 </div>
-<br>
-<% if signed_in? && current_user.admin? %>
-  <div class="new-product-button">
-    <%= link_to 'New Product', new_product_path %>
-  </div>
-  
-  <% end %>
-
-   
-</div>
-  
 
 
- <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
