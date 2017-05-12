@@ -1,27 +1,26 @@
 Rails.application.routes.draw do
-   devise_for :users,:controllers => { :registrations => "users/registrations" }, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout',:sign_up => 'signup', :edit_user => 'edit'} 
-                                            
-
+  devise_for :admins
+  devise_for :users, :controllers => { :registrations => "my_registrations" }, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
+  
   resources :users
   resources :products do
-  resources :comments
+    resources :comments
   end
 
-  
-  resources :orders, only: [:index, :show, :create, :destroy]
- get 'signup'      => 'users#new'
+  get 'static_pages/index'
 
   get 'static_pages/about'
+
   get 'static_pages/contact'
-  get 'static_pages/index'
-  get 'static_pages/landing_page'
+
   post 'static_pages/thank_you'
-  root 'static_pages#landing_page'
 
+  get 'static_pages/landing_page'
+  
+  root 'products#index'
 
- 	
-
- 
+  resources :orders, only: [:index, :show, :create, :destroy]
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
