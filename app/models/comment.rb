@@ -2,11 +2,9 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :product
 
-  validates :body, presence: true
-  validates :user, presence: true
-  validates :product, presence: true
-  validates :rating, numericality: { only_integer: true }
+  validates :body, :user, :product, presence: { message: "All fields required" }
+  validates :rating, numericality: { only_integer: true, less_than: 6 }
 
-    scope :rating_desc, -> { order(rating: :desc) }
+  scope :rating_desc, -> { order(rating: :desc) }
   scope :rating_asc, -> { order(rating: :asc) }
 end
