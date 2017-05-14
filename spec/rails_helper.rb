@@ -13,8 +13,9 @@ require 'devise'
 RSpec.configure do |config|
   
   # Use the following instead if you are on Devise >= 4.1.1
-   config.include Devise::TestHelpers, :type => :controller
+   config.include Devise::Test::ControllerHelpers, :type => :controller
 end
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end

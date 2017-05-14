@@ -32,19 +32,30 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#Devise User Authentication
 gem 'devise'
-gem 'cancancan', '~> 1.10'
-gem 'rolify'
+
+
+#User Authorization CanCanCan
+gem 'cancancan', '~> 1.10' 
+
+#add pagination for comments
 gem 'will_paginate', '~> 3.1.0'
+gem 'rolify'
+
 gem 'will_paginate-bootstrap'
+
 gem 'bootstrap-will_paginate'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails', '~> 4.0'
+
 end
 
 group :development do
@@ -65,4 +76,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
-gem 'rails-controller-testing'
