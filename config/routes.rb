@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   
   root 'products#index'
 
+  post 'payments/create'
+
   resources :orders, only: [:index, :show, :create, :destroy]
   
 
