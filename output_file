@@ -1,0 +1,47 @@
+
++BRAKEMAN REPORT+
+
+Application path: C:/Users/Tahir/learningapp3
+Rails version: 4.x
+Brakeman version: 3.6.1
+Started at 2017-05-18 02:24:56 +0200
+Duration: 2.937454 seconds
+Checks run: BasicAuth, BasicAuthTimingAttack, ContentTag, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, DynamicFinders, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONEncoding, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, MimeTypeDoS, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NestedAttributesBypass, NumberToCurrency, QuoteTableName, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, RouteDoS, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionManipulation, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoSCVE, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, XMLDoS, YAMLParsing
+
+
++SUMMARY+
+
++-------------------+-------+
+| Scanned/Reported  | Total |
++-------------------+-------+
+| Controllers       | 8     |
+| Models            | 8     |
+| Templates         | 40    |
+| Errors            | 1     |
+| Security Warnings | 1 (1) |
++-------------------+-------+
+
++-------------------+-------+
+| Warning Type      | Total |
++-------------------+-------+
+| Format Validation | 1     |
++-------------------+-------+
+
+
++Errors+
+
++---------------------------------------------------------------------------+------------------------------------------------------------------>>
+| Error                                                                     | Location                                                         >>
++---------------------------------------------------------------------------+------------------------------------------------------------------>>
+| (string):75 :: parse error on value ":" (tCOLON) While processing Gemfile | C:/RailsInstaller/Ruby2.3.0/lib/ruby/2.3.0/racc/parser.rb:528:in >>
++---------------------------------------------------------------------------+------------------------------------------------------------------>>
+
+
+Model Warnings:
+
++------------+---------+-------------------+--------------------------------------------------------------------------------------------------->>
+| Confidence | Model   | Warning Type      | Message                                                                                           >>
++------------+---------+-------------------+--------------------------------------------------------------------------------------------------->>
+| High       | Product | Format Validation | Insufficient validation for 'image_url' using /.(jpg|png)\Z/i. Use \A and \z as anchors near line >>
++------------+---------+-------------------+--------------------------------------------------------------------------------------------------->>
+
