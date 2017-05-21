@@ -8,19 +8,8 @@ var refreshRating = function() {
     });
 };
 
-$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load ajaxSuccess', function() {
     refreshRating();
 
-	//textarea color
-  $(".form-control").on({  	
-    focus: function(){
-      $(this).css("background-color", "gainsboro");
-  	},
-    focusout: function(){
-      $(this).css("background-color", "white");
-  	},
-	}); 
-
-  $('.img-zoom').elevateZoom();
+    $('.zoom').elevateZoom();
 });
-
