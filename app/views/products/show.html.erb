@@ -7,7 +7,7 @@
 
     <div class="col-md-6">
       
-      <%= image_tag(@product.image_url, width: "350", class: "img-zoom img-responsive show-prod",data_zoom_image: @product.image_url) %>
+      <%= image_tag(@product.image_url, class: "img-zoom img-responsive show-prod",data_zoom_image: @product.image_url) %>
       
     </div>
 
@@ -32,7 +32,7 @@
 
       <br>
 
-      <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+      <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div> </p>
 
      
         <%= form_tag "/payments/create" do %>

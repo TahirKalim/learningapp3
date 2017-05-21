@@ -1,15 +1,15 @@
-$(document).on('turbolinks:load', function(){
-	// star rating
-  $('.rating').raty( { path: '/images/raty', scoreName: 'comment[rating]' 
-  	});
+var refreshRating = function() {
+    $('.rating').raty( { path: '/assets', scoreName: 'comment[rating]' });
+    $('.rated').raty({ path: '/assets',
+        readOnly: true,
+        score: function() {
+            return $(this).attr('data-score');
+        }
+    });
+};
 
-  $('.rated').raty({ path: '/images/raty',
-    readOnly: true,
-    score: function() {
-      return $(this).attr('data-score');
-    }
-    
-  });
+$(document).on('turbolinks:load', function() {
+    refreshRating();
 
 	//textarea color
   $(".form-control").on({  	

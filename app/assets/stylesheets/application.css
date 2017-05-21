@@ -146,6 +146,7 @@ h4 {
 
 .footer-margin {
 	margin-bottom: 60px;
+	margin-top: 90px;
 }
 
 footer {
@@ -179,13 +180,13 @@ footer {
 /**** @media ****/
 
 
-@media (min-width: 766px) {
+@media (min-width: 166px) {
 	.navbar-right {
 		float: right !important;
 		margin-right: 5px;
 	}
 	.short-container {
-		width: 60%;
+		width: 90%;
 		margin: 0 auto;
 		padding: 20px 40px;
 		border-radius: 10px;
