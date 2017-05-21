@@ -1,45 +1,6 @@
 <div class="product-reviews">
-  <% if @comments.size >= 2 %> 
-
-  <div class="row">
-	  <div class="ratings-row">
-	    <p><strong>Best rating: </strong></p>
-	    <div class="rated rating-card" data-score="<%= @product.highest_rating_comment.rating %>"></div>
-	    <p><%= @product.highest_rating_comment.body %></p>
-	  </div>
-
-	  <div class="ratings-row">
-	    <p><strong>Worst rating: </strong></p>
-	    <div class="rated rating-card" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
-	    <p><%= @product.lowest_rating_comment.body %></p>
-	  </div>
-	</div>
+  <% @comments.each do |comment| %>
+    <%= render partial: 'comments/comment' , locals:  {comment: comment} %>
   <% end %>
-
-	<% if @comments.blank? %>
-
-	<p><strong>Be the first to add a review!</strong></p>
-
-	<% else %>
-
-		<br>
-		<h4><strong>Other users said:</strong></h4>
-		<br>
-		<div class="row">
-		  <% @comments.each do |comment| %>
-		  	<div class="ratings-row">
-		  		<% if comment.user.first_name.blank? %>
-		  			<p class="comment-title"><strong>Anonymous</strong> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
-		  		<% else %>
-			      <p class="comment-title"><strong><%= comment.user.first_name %></strong> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
-			    <% end %>
-			    <% if signed_in? && current_user.admin? %>
-			    	<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-			    <% end %>
-			    <div class="rated rating-card" data-score="<%= comment.rating %>"></div>
-			    <p><%= comment.body %></p>
-		    </div>
-			<% end %>
-		</div>
-	<% end %>
 </div>
+
