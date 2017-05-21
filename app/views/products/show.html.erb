@@ -6,7 +6,9 @@
     <br>
 
     <div class="col-md-6">
-      <%= image_tag(@product.image_url, class: "img-responsive show-prod") %>
+      
+      <%= image_tag(@product.image_url, width: "350", class: "img-zoom img-responsive show-prod",data_zoom_image: @product.image_url) %>
+      
     </div>
 
     <div class="col-md-6">

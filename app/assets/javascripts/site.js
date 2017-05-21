@@ -8,6 +8,7 @@ $(document).on('turbolinks:load', function(){
     score: function() {
       return $(this).attr('data-score');
     }
+    
   });
 
 	//textarea color
@@ -19,5 +20,7 @@ $(document).on('turbolinks:load', function(){
       $(this).css("background-color", "white");
   	},
 	}); 
+
+  $('.img-zoom').elevateZoom();
 });
 
