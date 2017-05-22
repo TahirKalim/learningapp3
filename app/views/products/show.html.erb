@@ -1,6 +1,9 @@
+<% cache @product do %>
+
 <div class="short-container">
  
   <div class="row">
+
     <h1><%= @product.name %></h1>
 
     <br>
@@ -70,4 +73,4 @@
  	<%= link_to 'Back', products_path, class: "btn btn-danger product-button" %>
 </div>
  
-    
+<% end %>
