@@ -95,4 +95,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => 'jorges-garden.heroku.com' }
+
+  config.web_socket_server_url = "wss://learningapp3.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://learningapp3.herokuapp.com', 'http://learningapp3.herokuapp.com']
 end

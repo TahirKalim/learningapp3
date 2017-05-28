@@ -1,7 +1,7 @@
 <% cache @product do %>
 
 <div class="short-container">
- 
+
   <div class="row">
 
     <h1><%= @product.name %></h1>
@@ -9,9 +9,9 @@
     <br>
 
     <div class="col-md-6">
-      
+
       <%= image_tag(@product.image_url, class: "img-zoom img-responsive show-prod",data_zoom_image: @product.image_url) %>
-      
+
     </div>
 
     <div class="col-md-6">
@@ -34,17 +34,17 @@
       </p>
 
       <p>Views: <%= @product.views %></p>
-      
+
       <br>
 
       <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div> </p>
 
-     
+
         <%= form_tag "/payments/create" do %>
         <%= render partial: "shared/stripe_checkout_button" %>
         <%= hidden_field_tag(:product_id, @product.id) %>
         <% end %>
-   
+
 
     </div>
 
@@ -52,9 +52,11 @@
 
     <br>
 
-    <h3>Ratings:</h3> 
+    <h3>Ratings:</h3>
 
     <br>
+    
+    <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 
     <%= render partial: "new_comment" %>
 
@@ -74,5 +76,5 @@
 
  	<%= link_to 'Back', products_path, class: "btn btn-danger product-button" %>
 </div>
- 
+
 <% end %>
